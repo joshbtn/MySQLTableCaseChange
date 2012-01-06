@@ -48,7 +48,7 @@
 			curTableName = curStr.match(matchTableName)[0];
 			
 			//Set the new table name.
-			newName = curTableName[toUpperCase ? "toUpperCase" : "toLowercase"]();
+			newName = curTableName[toUpperCase ? "toUpperCase" : "toLowerCase"]();
 			
 			//Create a mapping of all changed names.
 			nameMap[curTableName] = newName;
