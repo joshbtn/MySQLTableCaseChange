@@ -81,7 +81,8 @@
 			$what = $('#what'),
 			$whatButton = $('#whatButton'),
 			$how = $('#how'),
-			$howButton = $('#howButton');
+			$howButton = $('#howButton'),
+			$toUpper = $('#rUpper'),
 			$status = $('#status');
         
         //Handle convert button clicked
@@ -93,7 +94,7 @@
 			$status.attr('class', 'pending');
 			
 			try{
-				$io.val(convert($io.val(), true));
+				$io.val(convert($io.val(), $toUpper.get(0).checked ));
 				$status.text('Done!');
 				$status	
 					.attr('class', 'done')
