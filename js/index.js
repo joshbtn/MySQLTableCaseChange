@@ -33,7 +33,11 @@
 			curIndex = 0,
 			curTableName = "",
 			newName ="";
-			
+		
+		if( !matchesForCreate || matchesForCreate.length == 0){
+			return
+		}
+		
 		//Loop through all create statments to pull out the table names
 		for(; curIndex < matchesForCreate.length; curIndex+=1 ){
 			
@@ -44,7 +48,7 @@
 			curTableName = curStr.match(matchTableName)[0];
 			
 			//Set the new table name.
-			newName = curTableName.replace('`', '')[toUpperCase ? "toUpperCase" : "toLowercase"]();
+			newName = curTableName[toUpperCase ? "toUpperCase" : "toLowercase"]();
 			
 			//Create a mapping of all changed names.
 			nameMap[curTableName] = newName;
@@ -55,19 +59,19 @@
 			
 			// Drop both the new name, and the originalName
 			matchDropToDup = new RegExp ("(DROP\\s+TABLE[^`]+`" + newName + "+`\\s*;)", "gi");
-			debugger;
-			outStr = outStr.replace(matchDropToDup, "\1\n" + "DROP TABLE IF EXISTS `" + curTableName + "`;");
+			//TODO MAKE THIS WORK
+			//outStr = outStr.replace(matchDropToDup, "\1\n" + "xxxDROP TABLE IF EXISTS `" + curTableName + "`;");
 		}
-		
-		debugger;
 		
 		return outStr;
     }
     
 	//#PAGE LOGIC BELOW
     //- - - - - - - - - - - - - - - - - - 
-	var timeForShowHide = 200;
-	
+	var timeForShowHide = 200,
+		delayTime = 500,
+		fadeOutTime = 300;
+		
     // DOM LOAD
     // ----------
     $(function(){
@@ -78,11 +82,33 @@
 			$whatButton = $('#whatButton'),
 			$how = $('#how'),
 			$howButton = $('#howButton');
-			
+			$status = $('#status');
         
         //Handle convert button clicked
         $convertbutton.bind('click', function(e){
-			$io.val(convert($io.val(), true));
+			$status.css('visibility', 'visible');
+			$status.fadeIn(0)
+			
+			$status.html('converting...');
+			$status.attr('class', 'pending');
+			
+			try{
+				$io.val(convert($io.val(), true));
+				$status.text('Done!');
+				$status	
+					.attr('class', 'done')
+					.delay(delayTime)
+					.fadeOut(fadeOutTime);
+			} catch (e) {
+				if(typeof console !== 'undefined' && console !== null && console.log !== undefined && console.log !== null){
+					console.log(e);
+				}
+				$status.html('Therewas an error. Check the console for more information.');
+				$status.attr('class', 'error');
+				return false;
+			}
+			
+				
 			return false;
         });
 		

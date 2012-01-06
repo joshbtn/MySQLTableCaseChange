@@ -36,3 +36,7 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#ffffff', end
 #conv{width:100%; max-width:700px;}
 #io{width:100%; max-width:700px; margin-top:3px;}
 #convertButton{ margin-right:10px; }
+#status{}
+#status.pending{color#333; background:#ffff88}
+#status.done{color#333; background:#33ff33}
+#status.error{color#333; background:#ff3333}
