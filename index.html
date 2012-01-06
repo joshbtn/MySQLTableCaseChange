@@ -19,6 +19,7 @@
   <meta name="viewport" content="width=device-width,initial-scale=1">
 
   <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="css/screen.css">
 </head>
 
 <body>
@@ -26,7 +27,8 @@
         Run <code>mysqldump -h[host] -u[userName] -p[password] --add-drop-table --add-drop-database [dbname]. Copy and paste the results below</code>
   </header>
   <div role="main">
-    <textarea id="input" rows="50" col="50"></textarea>
+    <textarea id="io" rows="50" col="50"></textarea>
+    <button id="convert">Convert</button>
   </div>
   <footer>
 
