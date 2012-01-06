@@ -1,6 +1,14 @@
-body{padding:1.62em;}
+body{margin:1.62em; font-family: 'Open Sans', sans-serif;}
 body header{display:none;}
 input,textarea {border:solid 1px #eee;}
-code{background:#eee;}
+code{background:#eee; padding:0 0.62em;}
 ol,ul{margin:0.62em 1.62em;padding:0;}
 li{margin:0;padding:0;}
+.desc{margin:1.62em 0; }
+.desc .title{font-weight:bold; color:#A1D228}
+.desc .content{border-top:dotted 1px #eee;border-bottom:dotted 1px #eee; padding:0.62em 0;}
+#qua{margin:1.62em 0;}
+#how{ max-width:700px;}
+#what{/*display:none; visibility:hidden;*/ max-width:700px;}
+#io{width:100%; max-width:700px;}
+#convertButton{}

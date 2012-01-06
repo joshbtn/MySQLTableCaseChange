@@ -19,7 +19,10 @@
   <meta name="viewport" content="width=device-width,initial-scale=1">
 
   <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="css/gh-buttons.css">
+  <link href='http://fonts.googleapis.com/css?family=Open+Sans:400,700' rel='stylesheet' type='text/css'>
   <link rel="stylesheet" href="css/screen.css">
+  
 </head>
 
 <body>
@@ -27,16 +30,34 @@
 		<h1>MySQL Table Case Changer</h1>
 		<p>Convert the case of MySQL table names from a mysqldump file.  Helpful for the pesky windows to linux issue.  This is the online version.</p>
   </header>
-  <a href="https://github.com/joshatjben/MySQLTableCaseChange"><img style="position: absolute; top: 0; right: 0; border: 0;" src="https://a248.e.akamai.net/assets.github.com/img/71eeaab9d563c2b3c590319b398dd35683265e85/687474703a2f2f73332e616d617a6f6e6177732e636f6d2f6769746875622f726962626f6e732f666f726b6d655f72696768745f677261795f3664366436642e706e67" alt="Fork me on GitHub"></a>
+  <a href="https://github.com/joshatjben/MySQLTableCaseChange" style=""><img style="position: absolute; top: 0; right: 0; border: 0;" src="https://a248.e.akamai.net/assets.github.com/img/71eeaab9d563c2b3c590319b398dd35683265e85/687474703a2f2f73332e616d617a6f6e6177732e636f6d2f6769746875622f726962626f6e732f666f726b6d655f72696768745f677261795f3664366436642e706e67" alt="Fork me on GitHub"></a>
   <div role="main">
 	
-	<ol>
-	  <li>Run <code>mysqldump -h[host] -u[userName] -p[password] --add-drop-table --add-drop-database [dbname].</code></li>
-	  <li>Copy and paste the results below</li> 
-	</ol>
+	<div id="qua">
+		<button id="whatButton" class="button pill">What is it?</button>
+		<button id="howButton" class="button pill">How Do I Use it?</button>
+		<div id="what" class="desc">
+			<div class="title">What is it? <a href="javascript:void(0) style="font-weight:bold; float:right;margin-bottom:3px;">cose</a></div>
+			<div class="content">
+				<p>Did you ever have a problem when deploying a MySQL DB from a Windows machine to a Linux machine where your table names are lowercase on windows, but uppercase under Linux?  And maybe to make matters worse you have no control over the shared hosting Linux environment to affect the table name case sensitivity!?  Well this application can hopefully help you out. It can take an input from say, a mysqldump output, and change all the table names to either all upper or all lower case names.</p>
+				<p><a class="button icon arrowright" href="https://github.com/joshatjben/MySQLTableCaseChange">I do say good sir... show me the source ! </a></p>
+			</div>
+		</div>
+		<div id="how" class="desc">
+			<div class="title">How Do I Use it?</div>
+			<div class="content">
+				<span> Here's how to convert your entire db's table names. </span>
+				<ol>
+				  <li>Open a console and run <code><a href="http://dev.mysql.com/doc/refman/5.1/en/mysqldump.html" target="_blank">mysqldump</a> -h[host] -u[userName] -p[password] --add-drop-table --add-drop-database [dbname].</code></li>
+				  <li>Copy and paste the results below</li> 
+				</ol>
+			</div>
+		</div class="desc">
+	</div>
 	
+	<button id="convertButton" class="button big">Convert</button><br />
 	<textarea id="io" rows="20" cols="100">&nbsp;</textarea>
-	<button id="convertButton">Convert</button>
+	
   </div>
   <footer>
 
