@@ -63,18 +63,53 @@
 		
 		return outStr;
     }
-        
+    
+	//#PAGE LOGIC BELOW
+    //- - - - - - - - - - - - - - - - - - 
+	var timeForShowHide = 200;
+	
     // DOM LOAD
     // ----------
     $(function(){
         var $io = $('#io'),
-            $convertbutton = $('#convertButton');
+            $convertbutton = $('#convertButton'),
+			$qua = $('#qua'),
+			$what = $('#what'),
+			$whatButton = $('#whatButton'),
+			$how = $('#how'),
+			$howButton = $('#howButton');
+			
         
         //Handle convert button clicked
         $convertbutton.bind('click', function(e){
 			$io.val(convert($io.val(), true));
 			return false;
         });
+		
+		//Show what
+		$whatButton.click(
+			function(e){
+				if( $what.css('display') === 'none' ){
+					$what.show(timeForShowHide);
+				} else {
+					$what.hide(timeForShowHide);
+				}
+			}
+		);
+		
+		$howButton.click(
+			function(e){
+				if( $how.css('display') === 'none' ){
+					$how.show(timeForShowHide);
+				} else {
+					$how.hide(timeForShowHide);
+				}
+			}
+		);
+		
+		$qua.delegate('.desc .closeDesc', 'click', function(){
+			$(this).parent().parent().hide(timeForShowHide);
+		});
     });
     
 }());

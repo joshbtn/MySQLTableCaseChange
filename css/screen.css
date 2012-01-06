@@ -1,14 +1,38 @@
-body{margin:1.62em; font-family: 'Open Sans', sans-serif;}
+body{font-family: 'Open Sans', sans-serif; font-size:16px;}
 body header{display:none;}
-input,textarea {border:solid 1px #eee;}
+input,textarea {border:solid 1px #eee; color:#555;}
 code{background:#eee; padding:0 0.62em;}
 ol,ul{margin:0.62em 1.62em;padding:0;}
 li{margin:0;padding:0;}
-.desc{margin:1.62em 0; }
+input{vertical-align:middle;}
+label{font-size:12px; color:#999; line-height:12px; margin:0 10px 0 2px;}
+a{color:#333}
+a:hover{color:#aaa}
+a:visited{color:#333}
+.grad {
+	background: #ffffff; /* Old browsers */
+background: -moz-linear-gradient(top,  #ffffff 0%, #fcfcfc 100%); /* FF3.6+ */
+background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,#ffffff), color-stop(100%,#fcfcfc)); /* Chrome,Safari4+ */
+background: -webkit-linear-gradient(top,  #ffffff 0%,#fcfcfc 100%); /* Chrome10+,Safari5.1+ */
+background: -o-linear-gradient(top,  #ffffff 0%,#fcfcfc 100%); /* Opera 11.10+ */
+background: -ms-linear-gradient(top,  #ffffff 0%,#fcfcfc 100%); /* IE10+ */
+background: linear-gradient(top,  #ffffff 0%,#fcfcfc 100%); /* W3C */
+filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#ffffff', endColorstr='#fcfcfc',GradientType=0 ); /* IE6-9 */
+
+	border-bottom: 1px solid #eee;
+	
+	margin: 0;
+}
+.desc{margin:1.62em; }
+.noWrap{white-space:nowrap;}
+.closeDesc{font-size:10px; float:right;}
 .desc .title{font-weight:bold; color:#A1D228}
-.desc .content{border-top:dotted 1px #eee;border-bottom:dotted 1px #eee; padding:0.62em 0;}
-#qua{margin:1.62em 0;}
-#how{ max-width:700px;}
-#what{/*display:none; visibility:hidden;*/ max-width:700px;}
+.desc .content{border-top:dotted 1px #eee;border-bottom:dotted 1px #eee; padding:0.62em 0; font-size:14px;}
+#main{margin:1.62em; }
+#qua{margin:0 0 1.62em 0 ; }
+#qua .grad{padding:0.62em 1.62em;}
+#how{  display:none; max-width:700px;}
+#what{ display:none; max-width:700px;}
+#conv{width:100%; max-width:700px;}
 #io{width:100%; max-width:700px;}
-#convertButton{}
+#convertButton{ margin-right:10px; }
