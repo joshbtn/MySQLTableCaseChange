@@ -69,8 +69,8 @@
 	//#PAGE LOGIC BELOW
     //- - - - - - - - - - - - - - - - - - 
 	var timeForShowHide = 200,
-		delayTime = 500,
-		fadeOutTime = 300;
+		delayTime = 2000,
+		fadeOutTime = 1000;
 		
     // DOM LOAD
     // ----------
