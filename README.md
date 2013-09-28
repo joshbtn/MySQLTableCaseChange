@@ -1,2 +1,2 @@
 #MySQLTableCaseChange
-As of right now all the magic happens in js/index.js.  I do plan on moving it out to it's own file.  I also plan on creating command line tools to help with some scripts I have under both windows and linux.  This all came about while trying to push Umbraco from my local windows dev environment to Linux shared hosting.
+Quick project to help move my local Umbraco instanct on windows to my prod linux host.
